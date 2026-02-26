@@ -2,19 +2,21 @@
 
 YouTube 비즈니스 이메일 추출 서비스를 위한 쿠키 전송 도구입니다.
 
-## 다운로드
+## 실행 (macOS)
 
-[Releases](https://github.com/2ndlifeinc/yt_crawler_public/releases)에서 OS에 맞는 파일을 다운로드하세요.
+터미널에 아래 한 줄을 붙여넣고 Enter:
 
-| OS | 파일 |
-|----|------|
-| macOS (Apple Silicon) | `yt_cookie_uploader-macos-arm64` |
-| macOS (Intel) | `yt_cookie_uploader-macos-x64` |
-| Windows | `yt_cookie_uploader-windows-x64.exe` |
+```bash
+curl -fsSL https://raw.githubusercontent.com/2ndlifeinc/yt_crawler_public/main/install.sh | bash
+```
 
-## 사용법
+## 실행 (Windows)
 
-1. 다운로드한 파일을 실행합니다
+[Releases](https://github.com/2ndlifeinc/yt_crawler_public/releases)에서 `yt_cookie_uploader-windows-x64.exe`를 다운로드하고 더블클릭하세요.
+
+## 어떻게 동작하나요?
+
+1. 실행하면 Chrome 프로필을 자동으로 스캔합니다
 2. Chrome 프로필을 자동으로 스캔합니다
 3. YouTube에 로그인된 계정이 표시됩니다
 4. 전송할 계정을 선택하면 자동으로 서버에 전송됩니다
