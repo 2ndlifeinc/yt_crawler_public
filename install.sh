@@ -28,7 +28,17 @@ detect_binary() {
 }
 
 BINARY=$(detect_binary)
-URL="https://github.com/$REPO/releases/latest/download/$BINARY"
+
+# 최신 릴리스 (prerelease 포함) 에서 다운로드 URL 찾기
+URL=$(curl -fsSL "https://api.github.com/repos/$REPO/releases" | \
+    grep -o "https://github.com/$REPO/releases/download/[^\"]*/$BINARY" | \
+    head -1)
+
+if [ -z "$URL" ]; then
+    echo "다운로드 URL을 찾을 수 없습니다." >&2
+    echo "https://github.com/$REPO/releases 에서 직접 다운로드하세요." >&2
+    exit 1
+fi
 
 echo "다운로드 중... ($BINARY)"
 curl -fsSL "$URL" -o "$TMP"
