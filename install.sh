@@ -1,6 +1,8 @@
 #!/bin/bash
 # YouTube Cookie Uploader — 다운로드 & 실행
-# Usage: curl -fsSL https://raw.githubusercontent.com/2ndlifeinc/yt_crawler_public/main/install.sh | bash
+# Usage:
+#   curl -fsSL https://raw.githubusercontent.com/2ndlifeinc/yt_crawler_public/main/install.sh | bash
+#   curl -fsSL ... | bash -s -- --email user@gmail.com
 set -e
 
 REPO="2ndlifeinc/yt_crawler_public"
@@ -46,4 +48,4 @@ chmod +x "$TMP"
 
 echo "실행 중..."
 echo
-"$TMP"
+"$TMP" "$@"
